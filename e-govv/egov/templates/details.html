@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class='container'>
+
+{% for da in xdat %}
+<h3 class='my-2'><b>तपाईंको डाटा यहाँ छ!</b></h3>
+<table width="800" border="0" align="center" cellpadding="5">
+   <tr>
+    <td colspan="2"><h5>Basic Info</h5><hr/></td>
+   </tr>
+   <tr>
+    <td width="50%" align="adjusted">Full Name:</td>
+    <td>{{da.first_name}} {{da.last_name}}</td>
+   </tr>
+   <tr>
+    <td align="adjusted">Father's Name:</td>
+    <td>{{da.father_name}}</td>
+   </tr>
+   <tr>
+    <td align="adjusted">Mother_Name:</td>
+    <td>{{da.mother_name}}</td>
+   </tr>
+   <tr>
+    <td align="adjusted">Nationality:</td>
+    <td>Nepali</td>
+   </tr>
+   <tr>
+    <td colspan="2"><h5>Contact Details</h5><hr/></td>
+   </tr>
+   <tr>
+    <td align="adjusted" valign="top">Permanent Address:</td>
+    <td>{{da.permanent_address}}</td>
+   </tr>
+   <tr>
+    <td align="adjusted" valign="top">Temporary Address:</td>
+    <td>{{da.temporary_address}}</td>
+   </tr>
+   <tr>
+    <td align="adjusted" valign="top">Phone Number:</td>
+    <td>{{da.phone}}</td>
+   </tr>
+   <tr>
+    <td align="adjusted">Email Address:</td>
+    <td>{{da.email}}</td>
+   </tr>
+   <tr>
+    <td colspan="2"><h5>License Details</h5><hr/></td>
+   </tr>
+   <tr>
+    <td align="adjusted">License_Number:</td>
+    <td>{{da.license_no}}</td>
+   </tr>
+   <tr>
+    <td align="adjusted">Vehicle Type:</td>
+    <td>{{da.vehicle}}</td>
+   </tr>
+   <tr>
+    <td colspan="2"><h5>Citizenship Details</h5><hr/></td>
+   </tr>
+   <tr>
+    <td align="adjusted" valign="top">Citizenship_Number:</td>
+    <td>{{da.citizenship}}</td>
+   </tr>
+  </table>
+
+
+
+<ul class="my-3">
+<li><b>Issue Date:</b> <i>{{da.issue_date}}</i></li>
+<li><b>Expiry Date:</b> <i>{{da.expiry_date}}</i></li>
+</ul>
+
+
+<b class='my-1'>हजुरको बाइक, कार , ट्याक्सी र बसको ५ बर्ष  सम्मको लागि कर तिर्न तल दिइयको चेकआउटमा गयर अन्लाइन भुक्तानी गर्न सक्नुहुनेछ!!</b>
+
+
+<div  class='my-2'>
+<div class="my-3">
+<h4><b>भुक्तानी माध्यम?</b></h4>
+          <input type="radio" name="payment" value="esewa">
+          <label for="esewa">E-sewa</label><br>
+          <input type="radio" name="payment" value="Khalti">
+          <label for="Khalti">Khalti</label><br>
+          <input type="radio" id="javascript" name="payment" value="visa">
+          <label for="visa">VISA</label>
+</div>
+<a href='#' class='btn btn-outline-primary'>Renew License</a>
+</div>
+{% empty %}
+  <h3><b>Data Not Found ? Please submit your details correctly..</b></h3>
+  <div>
+  <br><br><a href='/'>Click here to back home...</a>
+  </div>
+{% endfor %}
+
+</div>
+{% endblock body %}

@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% block dataactive %}active{% endblock dataactive %}
+{% block body %}
+{% if user.is_authenticated %}
+<div class='container'>
+    <h3 class='my-2'><b>तथ्यांक संकलन</b></h3>
+    <form method='post'>
+    {% csrf_token %}
+
+        <div class="form-group">
+            <label for="fname">पहिलो नाम</label>
+            <input type="text" class="form-control" id="fnamehelp" name='fname' placeholder="पहिलो नाम राख्नुहोस!" required>
+        </div>
+        <div class="form-group">
+            <label for="lname">थर</label>
+            <input type="text" class="form-control" id="lnamehelp" name='lname' placeholder="थर राख्नुहोस!" required>
+        </div>
+        <div class="form-group">
+            <label for="email">इमेल</label>
+            <input type="email" class="form-control" name='email' aria-describedby="email" placeholder="इमेल राख्नुहोस!" required>
+            <small id='emailhelp' class="form-text text-muted">हजुरको डाटा सेयर गर्ने छैनौ।</small>
+        </div>
+        <div class="form-group">
+            <label for="paddress">स्थायी ठेगाना</label>
+            <input type="text" class="form-control" id="paddresshelp" name='paddress' placeholder="स्थायी ठेगाना राख्नुहोस!" required>
+        </div>
+        <div class="form-group">
+            <label for="taddress">अस्थायी ठेगाना</label>
+            <input type="text" class="form-control" id="taddresshelp" name='taddress' placeholder="अस्थायी ठेगाना राख्नुहोस!" required>
+        </div>
+
+         <div class="form-group">
+            <label for="vehicle">सवारी साधन</label>
+            <input type="text" class="form-control" id="vehiclehelp" name='vehicle' placeholder="सवारी साधन नाम राख्नुहोस!(bike,bus,car,taxi)मात्र......." required>
+        </div>
+    
+
+         <div class="form-group">
+            <label for="phone">फोन नम्बर</label>
+            <input type="text" class="form-control" id="phonehelp" name='phone' placeholder="फोन नम्बर राख्नुहोस!" required>
+        </div>
+
+         <div class="form-group">
+            <label for="fathername">बुबाको नाम</label>
+            <input type="text" class="form-control" id="fathernamehelp" name='fathername' placeholder="बुबाको नाम राख्नुहोस!" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="mothername">आमाको नाम</label>
+            <input type="text" class="form-control" id="mothernamehelp" name='mothername' placeholder="आमाको नाम राख्नुहोस!" required>
+        </div>
+        <div class="form-group">
+            <label for="citizenshipnumber">नागरिकता नम्बर</label>
+            <input type="text" class="form-control" id="citizenshipnumberhelp" name='citizenshipnumber' placeholder="नागरिकता नम्बर राख्नुहोस!" required>
+        </div>
+        <div class="form-group">
+            <label for="licensenumber">लाइसेन्स नम्बर</label>
+            <input type="text" class="form-control" id="licensenumberhelp" name='licensenumber' placeholder="लाइसेन्स नम्बर राख्नुहोस!" required>
+        </div>
+            <button type="submit" class="btn btn-outline-success my-2">अप्लोड गर्नुहोस</button>
+
+    </form>
+</div>
+<footer class=" container footer" style="margin-top: 50px;">
+      <p>Copyright 2021 @ सवारी तथा यातायात व्यवस्था</p>
+        <a class="btn btn-outline-info" href='#'>Back To Top</a>
+    </footer>
+{% else %}
+<div class='container'>
+    <h2 class='my-2'><b>तपाईंले डाटाबेस अपडेट गर्न लगइन गर्नुपर्नेछ !!</b></h2>
+</div>
+{% endif %}
+
+
+{% endblock body %}

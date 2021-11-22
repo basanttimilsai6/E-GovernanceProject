@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+{% block homeactive %}active{% endblock homeactive %}
+{% block body %}
+<div class='container'>
+<iframe class='my-3' width="500" height="350" src="https://www.youtube.com/embed/RM2wWKhHUAY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   
+    <p class='my-2'><b>कृपया हजुरको लाइसेन्स नम्बरलाई दिइयको खाली ठाउँमा राख्नुहोस र छेउमा रहेको बटनलाई दबाउनुहोस!</b></p>
+
+
+                    <form class="d-flex" action="details" style='margin-top: 50px;'>
+                        <input class="form-control me-2" type="search" name='query' placeholder="आफ्नो लाइसेन्स नम्बरलाई यहाँ खोज्नुहोस....." aria-label="Search">
+                        <input class="form-control me-2" type="search" name='query1' placeholder="आफ्नो Nagrikta नम्बरलाई यहाँ rakhnuhos....." aria-label="Search">
+                         <input class="form-control me-2" type="search" name='query2' placeholder="आफ्नो Phone Number नम्बरलाई यहाँ rakhnuhos....." aria-label="Search">
+                        <button class="btn btn-outline-success my-2" type="submit">खोज्नुहोस</button>
+                    </form>
+</div>
+
+
+<footer class=" container footer" style="margin-top: 50px;">
+      <p>Copyright 2021 @ सवारी तथा यातायात व्यवस्था</p>
+        <a class="btn btn-outline-info" href='#'>Back To Top</a>
+    </footer>
+
+
+{% endblock body %}
+
+
+  
